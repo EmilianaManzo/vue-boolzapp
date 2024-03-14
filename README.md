@@ -23,4 +23,20 @@ Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 2. stampiamo dimanicamente i contatti/chat tramite un ciclo v-for 
 
 ### Milestone 2
-1. 
+1. creo un ciclo v-for nella sezione html che mostra chat aperta 
+2. estraggo element in contacts che ha l'indice del contatto cliccato facente parte dell'array messages .
+3. in base allo status aggiunge o meno la classe sent
+4. stampo in pagina element.message ed element.date
+
+
+### Milestone 3
+1. creo un elemento con valore stringa vuota 
+2. creo una funzione addElement che pusha all'interno del singolo contatto attivo un oggetto che contiene data, messaggio e status
+3. all'interno dell'input di testo inserisco un v-model.trim a cui associo l'elemento con stringa vuota 
+4. associo l'elemento del v-model al messaggio del nuovo elemento 
+5. al keyup.enter del campo input richiamo la funzione
+6. creo una una funzione answerBot che contiene un setTimeout che con un delay di 1 secondo invia la risposta del bot
+
+
+### Milestone 4
+1. ci stiamo lavorando 

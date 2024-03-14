@@ -15,7 +15,7 @@ createApp({
 
       newMessage:'',
       newDate: '',
-
+      nameToSearch: ''
       
     }
   },
@@ -49,6 +49,12 @@ createApp({
         
       }
 
+  },
+
+  computed:{
+    searchContact(){
+      return contacts.filter(contact => contact.name.toLowerCase().includes(this.nameToSearch.toLowerCase()))
+    }
   }
 
 

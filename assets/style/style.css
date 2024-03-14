@@ -93,7 +93,7 @@ body{
   width: 60%;
   max-width: 430px;
   border-radius: 10px;
-  padding: 20px 15px 0 15px;
+  padding: 5px 15px 0 15px;
   font-size: .8rem;
 }
 
@@ -128,7 +128,9 @@ ul li:hover{
   display: none;
 }
 
-.icon:hover .box{
+.icon:hover .box,
+.icon:focus .box
+{
   display: block;
   z-index: 1;
 }
@@ -174,6 +176,10 @@ ul li:hover{
 
 .pb_s{
   padding-bottom: 20px;
+}
+
+.pt_s{
+  padding-top: 15px;
 }
 
 .pr_s{
@@ -273,9 +279,13 @@ main .container .col.right{
 
 .col.left .search input{
   border: none;
-  width: 80%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   font-size: 0.8rem;
+}
+
+.col.left .search input:focus-visible{
+  outline: none;
 }
 
 /* Chat  */

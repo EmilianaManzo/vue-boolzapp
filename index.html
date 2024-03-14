@@ -59,12 +59,17 @@
           </div>
           <!-- /notifiche -->
 
-          <!-- seachbar -->
+          <!-- searchbar -->
           <div class="search p_xs dis_none dark debug">
 
             <div class="row">
               <i class="fa-solid fa-magnifying-glass"></i>
-              <input type="text" placeholder="Cerca o inizia una nuova chat" name="search">
+              <input
+                
+                v-model.trim="nameToSearch"
+                type="text"
+                placeholder="Cerca o inizia una nuova chat"
+                name="search">
             </div>  
 
           </div>
@@ -140,7 +145,7 @@
                 <div
                   :class="element.status === 'sent'? 'sent' : 'received' "
                   class="text_chat d_flex space_between  pos_rel">
-                  <p class="pb_s">{{element.message}}</p>
+                  <p class="pb_s pt_s">{{element.message}}</p>
                 
                   <div class="icon pos_rel">
                     <i class="fa-solid fa-chevron-down"></i>
