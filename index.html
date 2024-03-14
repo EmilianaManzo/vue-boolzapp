@@ -75,102 +75,22 @@
             
             <div class="row scroll">
               
-              <div class="col d_flex al_center fix-center">
-                <div class="img">
-                  <img src="assets/img/avatar_1.jpg" alt="" class="brd_radius">
-                </div>
-                <div class="text dis_none ">
-                  <h4 class="pb_xs">Michele</h4>
-                  <p>Lorem ipsum dolor sit amet</p>
+              <!-- stampiamo dinamicamente i contatti/chat  -->
+              <div
+              v-for="contact in contacts"  
+              class="col d_flex space_between al_center fix-center">
+                <div class="d_flex al_center">
+                  <div class="img">
+                    <img :src="`assets${contact.avatar}`" :alt="contact.name" class="brd_radius">
+                  </div>
+                  <div class="text dis_none ">
+                    <h4 class="pb_xs">{{contact.name}}</h4>
+                    <p>{{contact.messages[contact.messages.length - 1 ].message}}</p>
+                  </div>
                 </div>
                 <div class="hour d_flex f_end al_start dis_none ">16:26</div>
               </div>
 
-              <div class="col d_flex al_center fix-center">
-                <div class="img">
-                  <img src="assets/img/avatar_2.jpg" alt="" class="brd_radius">
-                </div>
-                <div class="text dis_none ">
-                  <h4 class="pb_xs">Fabio</h4>
-                  <p>Lorem ipsum dolor sit amet</p>
-                </div>
-                <div class="hour d_flex f_end al_start dis_none ">16:05</div>
-              </div>
-
-              
-              <div class="col d_flex al_center fix-center">
-                <div class="img">
-                  <img src="assets/img/avatar_3.jpg" alt="" class="brd_radius">
-                </div>
-                <div class="text dis_none ">
-                  <h4 class="pb_xs">Samuele</h4>
-                  <p>Lorem ipsum dolor sit amet</p>
-                </div>
-                <div class="hour d_flex f_end al_start dis_none ">16:03</div>
-              </div>
-
-              
-              <div class="col d_flex al_center fix-center">
-                <div class="img">
-                  <img src="assets/img/avatar_4.jpg" alt="" class="brd_radius">
-                </div>
-                <div class="text dis_none ">
-                  <h4 class="pb_xs">Alessandro B.</h4>
-                  <p>Lorem ipsum dolor sit amet</p>
-                </div>
-                <div class="hour d_flex f_end al_start dis_none ">15:50</div>
-              </div>
-              
-              
-              <div class="col d_flex al_center fix-center">
-                <div class="img">
-                  <img src="assets/img/avatar_5.jpg" alt="" class="brd_radius">
-                </div>
-                <div class="text dis_none ">
-                  <h4 class="pb_xs">Alessandro L.</h4>
-                  <p>Lorem ipsum dolor sit amet</p>
-                </div>
-                <div class="hour d_flex f_end al_start dis_none ">15:45</div>
-              </div>
-
-              
-              <div class="col d_flex al_center fix-center">
-                <div class="img">
-                  <img src="assets/img/avatar_6.jpg" alt="" class="brd_radius">
-                </div>
-                <div class="text dis_none ">
-                  <h4 class="pb_xs">Claudia</h4>
-                  <p>Lorem ipsum dolor sit amet</p>
-                </div>
-                <div class="hour d_flex f_end al_start dis_none ">15:40</div>
-              </div>
-
-
-              <div class="col d_flex al_center fix-center">
-                <div class="img">
-                  <img src="assets/img/avatar_7.jpg" alt="" class="brd_radius">
-                </div>
-                <div class="text dis_none ">
-                  <h4 class="pb_xs">Federico</h4>
-                  <p>Lorem ipsum dolor sit amet</p>
-                </div>
-                <div class="hour d_flex f_end al_start dis_none ">15:22</div>
-              </div>
-
-              
-              
-              
-              <div class="col d_flex al_center fix-center">
-                <div class="img">
-                  <img src="assets/img/avatar_8.jpg" alt="" class="brd_radius">
-                </div>
-                <div class="text dis_none ">
-                  <h4 class="pb_xs">Fabio</h4>
-                  <p>Lorem ipsum dolor sit amet</p>
-                </div>
-                <div class="hour d_flex f_end al_start dis_none ">16:05</div>
-              </div>
-              
 
             </div>
             

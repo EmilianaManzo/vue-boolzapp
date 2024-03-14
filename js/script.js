@@ -7,9 +7,12 @@ createApp({
     return{
       contacts
 
-
     }
+  },
+
+  mounted(){
+
   }
 
   
-}).mount('#app')
+}).mount('#app');
