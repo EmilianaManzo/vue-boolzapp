@@ -35,7 +35,20 @@ createApp({
         message: '',
         status: 'sent'
       }
-    }
+    },
+
+      answerBot(){
+        setTimeout(()=>{
+          this.newElement = {
+            date: '',
+            message: 'OK',
+            status: 'received'
+          }
+          this.contacts[this.activeMessage].messages.push(this.newElement);
+        },1000)
+        
+      }
+
   }
 
 

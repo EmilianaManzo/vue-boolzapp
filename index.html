@@ -105,12 +105,14 @@
         <div class="col right debug">
 
           <!-- topbar -->
-          <div class="top d_flex pd_xs space_between dark debug">
+          <div
+          
+            class="top d_flex pd_xs space_between dark debug">
 
             <div class="img d_flex al_center debug">
-              <img src="assets/img/avatar_1.jpg" alt="" class="brd_radius">
+              <img :src="`assets${contacts[activeMessage].avatar}`" :alt="contacts[activeMessage].name" class="brd_radius">
               <div>
-                <h4 class="pb_xs">Michele</h4>
+                <h4 class="pb_xs">{{contacts[activeMessage].name}}</h4>
                 <p>Ultimo accesso oggi alle 16:26</p>
               </div>
             </div>
@@ -174,7 +176,7 @@
             <div class="text">
               <input
                 v-model.trim ="newMessage" 
-                @keyup.enter="addElement()"
+                @keyup.enter="addElement(),answerBot()"
                 type="text"
                 placeholder="Scrivi un messaggio">
             </div>
