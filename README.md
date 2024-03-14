@@ -21,3 +21,6 @@ Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 ### Milestone 1
 1. caricare contacts
 2. stampiamo dimanicamente i contatti/chat tramite un ciclo v-for 
+
+### Milestone 2
+1. 

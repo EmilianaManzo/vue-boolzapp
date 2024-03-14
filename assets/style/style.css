@@ -101,7 +101,7 @@ body{
   background-color:var(--first-color) ;
 }
 
-.sent.active{
+.sent{
   background-color: var(--seventh-color);
 }
 
@@ -331,6 +331,7 @@ main .container .col.right{
   font-size: .5rem;
   position: absolute;
   bottom: 0;
+  right: 5px;
 }
 
 .col.right .bottom{

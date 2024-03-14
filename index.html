@@ -77,7 +77,8 @@
               
               <!-- stampiamo dinamicamente i contatti/chat  -->
               <div
-              v-for="contact in contacts"  
+              v-for="(contact,indice) in contacts"
+              @click="activeMessage = indice "
               class="col d_flex space_between al_center fix-center">
                 <div class="d_flex al_center">
                   <div class="img">
@@ -129,95 +130,33 @@
 
               
               
-              <div class="col d_flex f_end mb_xs debug">
-                <div class="sent active text_chat d_flex pos_rel">
-                  <p class="pb_s">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quaerat eos blanditis architecto expedita aspernatur quasi.
-                    et nobis aut officiis soluta voluptates nesciunt voluptate ipsa fuga rerum doloribus, unde laboriosam doloremque
-                  </p>
-                  <div>
-                    <div class="icon pos_rel">
-                      <i class="fa-solid fa-chevron-down"></i>
-                      <ul class="box box_shadow">
-                        <li>Info messaggio</li>
-                        <li>Cancella messagio</li>
-                        <li>Copia</li>
-                        <li>Rispondi</li>
-                        <li>Inoltra</li>
-                      </ul>
-                    </div>
-                    <div class="time pb_xs">16:13</div>
+              <div
+                v-for="element in contacts[activeMessage].messages "
+                class="col d_flex mb_xs debug"
+                :class="element.status === 'sent'? 'f_end' : ''">
+
+                <div
+                  :class="element.status === 'sent'? 'sent' : 'received' "
+                  class="text_chat d_flex space_between  pos_rel">
+                  <p class="pb_s">{{element.message}}</p>
+                
+                  <div class="icon pos_rel">
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <ul class="box box_shadow">
+                      <li>Info messaggio</li>
+                      <li>Cancella messagio</li>
+                      <li>Copia</li>
+                      <li>Rispondi</li>
+                      <li>Inoltra</li>
+                    </ul>
+                    
                   </div>
-                </div>
+                  <div class="time pb_xs">{{element.date}}</div>
+                  
+                  </div>
+                
               </div>
 
-              
-              <div class="col mb_xs debug">
-                <div class="received text_chat d_flex">
-                  <p class="pb_s">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quaerat eos blanditis architecto expedita aspernatur quasi.
-                    et nobis aut officiis soluta voluptates nesciunt voluptate ipsa fuga rerum doloribus, unde laboriosam doloremque
-                  </p>
-                  <div class="pos_rel">
-                    <div class="icon">
-                      <i class="fa-solid fa-chevron-down"></i>
-                      <ul class="box box_shadow">
-                        <li>Info messaggio</li>
-                        <li>Cancella messagio</li>
-                        <li>Copia</li>
-                        <li>Rispondi</li>
-                        <li>Inoltra</li>
-                      </ul>
-                    </div>
-                    <div class="time pb_xs">16:14</div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="col d_flex f_end mb_xs debug">
-                <div class="sent active text_chat d_flex">
-                  <p class="pb_s">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quaerat eos blanditis architecto expedita aspernatur quasi.
-                    et nobis aut officiis soluta voluptates nesciunt voluptate ipsa fuga rerum doloribus, unde laboriosam doloremque
-                  </p>
-                  <div class="pos_rel">
-                    <div class="icon">
-                      <i class="fa-solid fa-chevron-down"></i>
-                      <ul class="box box_shadow">
-                        <li>Info messaggio</li>
-                        <li>Cancella messagio</li>
-                        <li>Copia</li>
-                        <li>Rispondi</li>
-                        <li>Inoltra</li>
-                      </ul>
-                    </div>
-                    <div class="time pb_xs">16:15</div>
-                  </div>
-                </div>
-              </div>
-
-              
-              <div class="col mb_xs debug">
-                <div class="received text_chat d_flex">
-                  <p class="pb_s">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quaerat eos blanditis architecto expedita aspernatur quasi.
-                    et nobis aut officiis soluta voluptates nesciunt voluptate ipsa fuga rerum doloribus, unde laboriosam doloremque
-                  </p>
-                  <div class="pos_rel">
-                    <div class="icon">
-                      <i class="fa-solid fa-chevron-down"></i>
-                      <ul class="box box_shadow">
-                        <li>Info messaggio</li>
-                        <li>Cancella messagio</li>
-                        <li>Copia</li>
-                        <li>Rispondi</li>
-                        <li>Inoltra</li>
-                      </ul>
-                    </div>
-                    <div class="time pb_xs">16:16</div>
-                  </div>
-                </div>
-              </div>
               
                 
             </div>
@@ -233,7 +172,11 @@
             </div>
 
             <div class="text">
-              <input type="text" placeholder="Scrivi un messaggio">
+              <input
+                v-model.trim ="newMessage" 
+                @keyup.enter="addElement()"
+                type="text"
+                placeholder="Scrivi un messaggio">
             </div>
 
             <div class="icon right text_end none">
