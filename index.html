@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+  <!-- Font Awesome -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css' integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==' crossorigin='anonymous'/>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- Vue.Js -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  
+  <!-- Style  -->
+  <link rel="stylesheet" href="assets/style/style.css">
+
+
+  <title>Vue Boolzapp</title>
+</head>
+<body class="dark">
+  
+  <main id="app">
+    <div class="container debug">
+
+      <div class="row d_flex debug">
+
+        <!-- Colonna sinistra -->
+        <div class="col left none debug">
+
+          <!-- topbar -->
+          <div class="top d_flex pd_xs dark debug">
+
+            <div class="img d_flex al_center fix-center debug">
+              <img src="assets/img/avatar_io.jpg" alt="" class="brd_radius">
+            </div>
+            <nav class="d_flex f_end al_center dis_none  debug">
+              <i class="fa-solid fa-circle-notch"></i>
+              <i class="fa-solid fa-message"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </nav>
+          </div>
+          <!-- /topbar  -->
+
+          <!-- notifiche -->
+          <div class="notification d_flex al_center dis_none dark debug">
+            <div class="icon">
+              <i class="fa-solid fa-bell-slash"></i>
+            </div>
+            <div class="text pr_s">
+              <p>Ricevi notifiche dei nuovi messaggi</p>
+              <p>Attiva notifiche desktop</p>
+            </div>
+          </div>
+          <!-- /notifiche -->
+
+          <!-- seachbar -->
+          <div class="search p_xs dis_none dark debug">
+
+            <div class="row">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Cerca o inizia una nuova chat" name="search">
+            </div>  
+
+          </div>
+          <!-- /seachbar -->
+
+          <!-- chat -->
+          <div class="chat dark debug">
+            
+            <div class="row scroll">
+              
+              <div class="col d_flex al_center fix-center">
+                <div class="img">
+                  <img src="assets/img/avatar_1.jpg" alt="" class="brd_radius">
+                </div>
+                <div class="text dis_none ">
+                  <h4 class="pb_xs">Michele</h4>
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="hour d_flex f_end al_start dis_none ">16:26</div>
+              </div>
+
+              <div class="col d_flex al_center fix-center">
+                <div class="img">
+                  <img src="assets/img/avatar_2.jpg" alt="" class="brd_radius">
+                </div>
+                <div class="text dis_none ">
+                  <h4 class="pb_xs">Fabio</h4>
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="hour d_flex f_end al_start dis_none ">16:05</div>
+              </div>
+
+              
+              <div class="col d_flex al_center fix-center">
+                <div class="img">
+                  <img src="assets/img/avatar_3.jpg" alt="" class="brd_radius">
+                </div>
+                <div class="text dis_none ">
+                  <h4 class="pb_xs">Samuele</h4>
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="hour d_flex f_end al_start dis_none ">16:03</div>
+              </div>
+
+              
+              <div class="col d_flex al_center fix-center">
+                <div class="img">
+                  <img src="assets/img/avatar_4.jpg" alt="" class="brd_radius">
+                </div>
+                <div class="text dis_none ">
+                  <h4 class="pb_xs">Alessandro B.</h4>
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="hour d_flex f_end al_start dis_none ">15:50</div>
+              </div>
+              
+              
+              <div class="col d_flex al_center fix-center">
+                <div class="img">
+                  <img src="assets/img/avatar_5.jpg" alt="" class="brd_radius">
+                </div>
+                <div class="text dis_none ">
+                  <h4 class="pb_xs">Alessandro L.</h4>
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="hour d_flex f_end al_start dis_none ">15:45</div>
+              </div>
+
+              
+              <div class="col d_flex al_center fix-center">
+                <div class="img">
+                  <img src="assets/img/avatar_6.jpg" alt="" class="brd_radius">
+                </div>
+                <div class="text dis_none ">
+                  <h4 class="pb_xs">Claudia</h4>
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="hour d_flex f_end al_start dis_none ">15:40</div>
+              </div>
+
+
+              <div class="col d_flex al_center fix-center">
+                <div class="img">
+                  <img src="assets/img/avatar_7.jpg" alt="" class="brd_radius">
+                </div>
+                <div class="text dis_none ">
+                  <h4 class="pb_xs">Federico</h4>
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="hour d_flex f_end al_start dis_none ">15:22</div>
+              </div>
+
+              
+              
+              
+              <div class="col d_flex al_center fix-center">
+                <div class="img">
+                  <img src="assets/img/avatar_8.jpg" alt="" class="brd_radius">
+                </div>
+                <div class="text dis_none ">
+                  <h4 class="pb_xs">Fabio</h4>
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="hour d_flex f_end al_start dis_none ">16:05</div>
+              </div>
+              
+
+            </div>
+            
+          </div>
+          <!-- /chat -->
+          
+        </div>
+        <!-- /Colonna sinistra -->
+        
+        <!-- Colonna destra -->
+        <div class="col right debug">
+
+          <!-- topbar -->
+          <div class="top d_flex pd_xs space_between dark debug">
+
+            <div class="img d_flex al_center debug">
+              <img src="assets/img/avatar_1.jpg" alt="" class="brd_radius">
+              <div>
+                <h4 class="pb_xs">Michele</h4>
+                <p>Ultimo accesso oggi alle 16:26</p>
+              </div>
+            </div>
+            <nav class="d_flex f_end al_center none debug">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-paperclip"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </nav>
+          </div>
+          <!-- /topbar -->
+
+
+          <!-- center  -->
+          <div class="center dark">
+            
+            <div class="row padd_xl scroll padd_xl_min">
+
+              
+              
+              <div class="col d_flex f_end mb_xs debug">
+                <div class="sent active text_chat d_flex pos_rel">
+                  <p class="pb_s">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quaerat eos blanditis architecto expedita aspernatur quasi.
+                    et nobis aut officiis soluta voluptates nesciunt voluptate ipsa fuga rerum doloribus, unde laboriosam doloremque
+                  </p>
+                  <div>
+                    <div class="icon pos_rel">
+                      <i class="fa-solid fa-chevron-down"></i>
+                      <ul class="box box_shadow">
+                        <li>Info messaggio</li>
+                        <li>Cancella messagio</li>
+                        <li>Copia</li>
+                        <li>Rispondi</li>
+                        <li>Inoltra</li>
+                      </ul>
+                    </div>
+                    <div class="time pb_xs">16:13</div>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div class="col mb_xs debug">
+                <div class="received text_chat d_flex">
+                  <p class="pb_s">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quaerat eos blanditis architecto expedita aspernatur quasi.
+                    et nobis aut officiis soluta voluptates nesciunt voluptate ipsa fuga rerum doloribus, unde laboriosam doloremque
+                  </p>
+                  <div class="pos_rel">
+                    <div class="icon">
+                      <i class="fa-solid fa-chevron-down"></i>
+                      <ul class="box box_shadow">
+                        <li>Info messaggio</li>
+                        <li>Cancella messagio</li>
+                        <li>Copia</li>
+                        <li>Rispondi</li>
+                        <li>Inoltra</li>
+                      </ul>
+                    </div>
+                    <div class="time pb_xs">16:14</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col d_flex f_end mb_xs debug">
+                <div class="sent active text_chat d_flex">
+                  <p class="pb_s">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quaerat eos blanditis architecto expedita aspernatur quasi.
+                    et nobis aut officiis soluta voluptates nesciunt voluptate ipsa fuga rerum doloribus, unde laboriosam doloremque
+                  </p>
+                  <div class="pos_rel">
+                    <div class="icon">
+                      <i class="fa-solid fa-chevron-down"></i>
+                      <ul class="box box_shadow">
+                        <li>Info messaggio</li>
+                        <li>Cancella messagio</li>
+                        <li>Copia</li>
+                        <li>Rispondi</li>
+                        <li>Inoltra</li>
+                      </ul>
+                    </div>
+                    <div class="time pb_xs">16:15</div>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div class="col mb_xs debug">
+                <div class="received text_chat d_flex">
+                  <p class="pb_s">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quaerat eos blanditis architecto expedita aspernatur quasi.
+                    et nobis aut officiis soluta voluptates nesciunt voluptate ipsa fuga rerum doloribus, unde laboriosam doloremque
+                  </p>
+                  <div class="pos_rel">
+                    <div class="icon">
+                      <i class="fa-solid fa-chevron-down"></i>
+                      <ul class="box box_shadow">
+                        <li>Info messaggio</li>
+                        <li>Cancella messagio</li>
+                        <li>Copia</li>
+                        <li>Rispondi</li>
+                        <li>Inoltra</li>
+                      </ul>
+                    </div>
+                    <div class="time pb_xs">16:16</div>
+                  </div>
+                </div>
+              </div>
+              
+                
+            </div>
+
+          </div>
+          <!-- /center  -->
+
+          <!-- bottom bar -->
+          <div class="bottom d_flex al_center dark">
+
+            <div class="icon left text_c none">
+              <i class="fa-regular fa-face-smile"></i>
+            </div>
+
+            <div class="text">
+              <input type="text" placeholder="Scrivi un messaggio">
+            </div>
+
+            <div class="icon right text_end none">
+              <i class="fa-solid fa-microphone"></i>
+            </div>
+
+          </div>
+          <!-- /bottom bar -->
+
+        </div>
+        <!-- /Colonna destra -->
+
+      </div>
+
+    </div>
+  </main>
+
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>
