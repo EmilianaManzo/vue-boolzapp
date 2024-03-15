@@ -139,7 +139,7 @@
               
               
               <div
-                v-for="element in contacts[activeMessage].messages "
+                v-for="(element,index) in contacts[activeMessage].messages "
                 class="col d_flex mb_xs debug"
                 :class="element.status === 'sent'? 'f_end' : ''">
 
@@ -149,10 +149,12 @@
                   <p class="pb_s pt_s">{{element.message}}</p>
                 
                   <div class="icon pos_rel">
-                    <i class="fa-solid fa-chevron-down"></i>
-                    <ul class="box box_shadow">
+                    <i @click=" isClicked = !isClicked"
+                    class="fa-solid fa-chevron-down"></i>
+                    <ul :class="{'d_none' : !isClicked}" class="box box_shadow">
                       <li>Info messaggio</li>
-                      <li>Cancella messagio</li>
+                      <li 
+                        @click="deleteMess(index)">Cancella messagio</li>
                       <li>Copia</li>
                       <li>Rispondi</li>
                       <li>Inoltra</li>

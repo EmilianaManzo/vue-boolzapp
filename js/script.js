@@ -15,8 +15,9 @@ createApp({
 
       newMessage:'',
       newDate: '',
-      nameToSearch: ''
-      
+      nameToSearch: '',
+      isClicked: false,
+      counterMess : 0
     }
   },
 
@@ -47,6 +48,13 @@ createApp({
           this.contacts[this.activeMessage].messages.push(this.newElement);
         },1000)
         
+      },
+
+      deleteMess(index){
+        
+        this.contacts[this.activeMessage].messages.splice(index,1)
+        
+    
       }
 
   },
@@ -64,6 +72,12 @@ createApp({
 
       return contacts
     },
+
+    idMessage(index){
+      
+      this.contacts[this.activeMessage].messages.at(index)
+    
+    }
   
   }
 

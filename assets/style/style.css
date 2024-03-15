@@ -54,6 +54,10 @@ body{
   display: flex;
 }
 
+.d_none{
+  display: none;
+}
+
 .f_column{
   flex-direction: column;
 }
@@ -125,13 +129,11 @@ ul li:hover{
   position: absolute;
   top: 20px;
   right: 5px;
-  display: none;
+  /* display: none; */
 }
 
-.icon:hover .box,
-.icon:focus .box
-{
-  display: block;
+.icon:hover .box{
+  /* display: block; */
   z-index: 1;
 }
 
