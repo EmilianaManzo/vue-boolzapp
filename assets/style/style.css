@@ -129,6 +129,7 @@ ul li:hover{
   position: absolute;
   top: 20px;
   right: 5px;
+  z-index: 1;
   /* display: none; */
 }
 
@@ -437,6 +438,8 @@ MEDIA QUERY
 /* **************************
         DARK MODE 
 ************************** */
+
+/* NON LA ATTIVO CON IL BOTTONE  PERCHE' E' IMPOSTATA MALE  */
 
 /* body.dark{
   background: black;

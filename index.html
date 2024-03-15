@@ -16,6 +16,9 @@
 
   <!-- Vue.Js -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <!-- Luxon -->
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
   
   <!-- Style  -->
   <link rel="stylesheet" href="assets/style/style.css">
@@ -95,7 +98,8 @@
                     <p>{{contact.messages[contact.messages.length - 1 ].message}}</p>
                   </div>
                 </div>
-                <div class="hour d_flex f_end al_start dis_none ">16:26</div>
+                <!-- BUG: mi prende la data e l'orario anche del messaggio inviato  -->
+                <div class="hour d_flex f_end al_start dis_none ">{{contact.messages[contact.messages.length - 1 ].date}}</div>
               </div>
 
 
@@ -119,7 +123,9 @@
               <img :src="`assets${contacts[activeMessage].avatar}`" :alt="contacts[activeMessage].name" class="brd_radius">
               <div>
                 <h4 class="pb_xs">{{contacts[activeMessage].name}}</h4>
-                <p>Ultimo accesso oggi alle 16:26</p>
+                <p v-if="contacts[activeMessage].messages[contacts[activeMessage].messages.length - 1 ].status == 'received'">Ultimo accesso {{contacts[activeMessage].messages[contacts[activeMessage].messages.length - 1 ].date}} </p>
+                <p v-else>Online</p>
+              
               </div>
             </div>
             <nav class="d_flex f_end al_center none debug">
@@ -143,18 +149,22 @@
                 class="col d_flex mb_xs debug"
                 :class="element.status === 'sent'? 'f_end' : ''">
 
+                <!-- utilizzo la forma contratta per inserire la classe dinamicamente perchè gli status corrispondono ai nomi delle mie classi
+                :class="element.status === 'sent'? 'sent' : 'received' " FORMA LUNGA CON TERNARIO -->
                 <div
-                  :class="element.status === 'sent'? 'sent' : 'received' "
+                  :class="element.status"
                   class="text_chat d_flex space_between  pos_rel">
                   <p class="pb_s pt_s">{{element.message}}</p>
                 
                   <div class="icon pos_rel">
-                    <i @click=" isClicked = !isClicked"
+                    <i @click="idMessage(index)"
                     class="fa-solid fa-chevron-down"></i>
-                    <ul :class="{'d_none' : !isClicked}" class="box box_shadow">
+                    <ul class="box d_none box_shadow">
                       <li>Info messaggio</li>
+
+                      <!-- BUG ULTIMO ELEMENTO DA CANCELLARE -->
                       <li 
-                        @click="deleteMess(index)">Cancella messagio</li>
+                        @click.stop="deleteMess(index);idMessage(index)">Cancella messagio</li>
                       <li>Copia</li>
                       <li>Rispondi</li>
                       <li>Inoltra</li>

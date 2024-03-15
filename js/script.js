@@ -2,6 +2,9 @@ import { contacts } from "./database.js";
 
 const {createApp} = Vue;
 
+const {DateTime} = luxon;
+
+
 createApp({
   data(){
     return{
@@ -17,14 +20,25 @@ createApp({
       newDate: '',
       nameToSearch: '',
       isClicked: false,
-      counterMess : 0
+      counterMess : 0,
+      dateNow :''
+
     }
   },
 
-  methods: {
+  methods: { 
+    printData(){
+      this.dateNow = DateTime.now()
+                    .setLocale('it')
+                    .toFormat('dd/MM/yyyy HH:mm:ss')
+      return this.dateNow;
+    },
+
+
     addElement(){
+      this.printData();
       this.newElement = {
-        date: '',
+        date: this.dateNow,
         message: this.newMessage,
         status: 'sent'
       }
@@ -40,13 +54,14 @@ createApp({
 
       answerBot(){
         setTimeout(()=>{
+          this.printData();
           this.newElement = {
-            date: '',
+            date: this.dateNow,
             message: 'OK',
             status: 'received'
           }
           this.contacts[this.activeMessage].messages.push(this.newElement);
-        },1000)
+        },2000)
         
       },
 
@@ -54,9 +69,20 @@ createApp({
         
         this.contacts[this.activeMessage].messages.splice(index,1)
         
-    
-      }
+      },
 
+      idMessage(index){
+      // non riesco ad utilizzarlo perchè mi si aprono tutte 
+      // this.contacts[this.activeMessage].messages[index] ? this.isClicked = !this.isClicked : ''
+      const chevron = document.querySelectorAll('.box');
+      chevron[index].classList.toggle('d_none');
+
+
+      },
+
+      lastMessage(){
+        
+      }
   },
 
   computed:{
@@ -73,11 +99,8 @@ createApp({
       return contacts
     },
 
-    idMessage(index){
-      
-      this.contacts[this.activeMessage].messages.at(index)
+   
     
-    }
   
   }
 
