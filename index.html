@@ -65,7 +65,7 @@
             <div class="row">
               <i class="fa-solid fa-magnifying-glass"></i>
               <input
-                
+                @keyup="searchContact()"
                 v-model.trim="nameToSearch"
                 type="text"
                 placeholder="Cerca o inizia una nuova chat"
@@ -82,8 +82,9 @@
               
               <!-- stampiamo dinamicamente i contatti/chat  -->
               <div
-              v-for="(contact,indice) in contacts"
+              v-for="(contact,indice) in searchContact"
               @click="activeMessage = indice "
+              v-show="contact.visible"
               class="col d_flex space_between al_center fix-center">
                 <div class="d_flex al_center">
                   <div class="img">

@@ -113,7 +113,7 @@ i{
 
 ul li{
   list-style: none;
-  padding:5px 15px 5px 5px;
+  padding: 10px;
 }
 
 ul li:hover{
@@ -121,7 +121,7 @@ ul li:hover{
 }
 
 .box{
-  width: 90px;
+  width: 150px;
   position: absolute;
   top: 20px;
   right: 5px;
@@ -279,7 +279,7 @@ main .container .col.right{
 
 .col.left .search input{
   border: none;
-  width: 90%;
+  width: 80%;
   height: 90%;
   font-size: 0.8rem;
 }
@@ -298,6 +298,11 @@ main .container .col.right{
   height: 80px;
   width: 100%;
   border:2px solid var(--twelth-color) ;
+  cursor: pointer;
+}
+.col.left .chat .col:hover{
+  background-color: var(--second-color);
+  border: none;
 }
 
 .col.left .chat .col p,

@@ -52,9 +52,19 @@ createApp({
   },
 
   computed:{
+
     searchContact(){
-      return contacts.filter(contact => contact.name.toLowerCase().includes(this.nameToSearch.toLowerCase()))
-    }
+      contacts.forEach(contact =>{
+        if (contact.name.toLowerCase().includes(this.nameToSearch.toLowerCase())){
+          contact.visible = true
+        } else{
+            contact.visible = false
+        }
+      })
+
+      return contacts
+    },
+  
   }
 
 

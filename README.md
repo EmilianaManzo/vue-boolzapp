@@ -39,4 +39,7 @@ Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 
 
 ### Milestone 4
-1. ci stiamo lavorando 
+1. inzialmente utilizzo un filter, ma al click per visualizzare la chat del contatto si apriva quella dell'indice corrispondente originale 
+2. utilizzo quindi una funzione searchContact all'intero della quale faccio un ciclo for each di contacts che restituisce contact 
+3. faccio un controllo per poter restituire solo i contatti che hanno visible= true
+4. utilizzo un v-show per passare il parametro di visible
